@@ -3,7 +3,7 @@ name: Build Debian image
 on:
   workflow_dispatch:
   push:
-    paths: ["./debian.Dockerfile"]
+    paths: ["debian.Dockerfile"]
     branches: ["master"]
 
 jobs:

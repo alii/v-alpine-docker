@@ -3,7 +3,7 @@ name: Build Alpine image
 on:
   workflow_dispatch:
   push:
-    paths: ["./alpine.Dockerfile"]
+    paths: ["alpine.Dockerfile"]
     branches: ["master"]
 
 jobs:
