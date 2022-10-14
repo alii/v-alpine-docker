@@ -2,6 +2,8 @@ FROM debian
 
 WORKDIR /opt/vlang
 
+ENV AUTHOR "Alistair Smith hi@alistair.sh"
+
 ENV VVV  /opt/vlang
 ENV PATH /opt/vlang:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ENV VFLAGS -cc gcc
