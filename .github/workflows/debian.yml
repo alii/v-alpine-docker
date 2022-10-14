@@ -1,0 +1,19 @@
+name: Build Debian image
+
+on:
+  workflow_dispatch:
+  push:
+    paths: ["./alpine.Dockerfile"]
+    branches: ["master"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Login to Docker hub
+        run: docker login --username aabbccsmith --password ${{ secrets.DOCKER_PAT }}
+      - name: Build
+        run: docker build -t aabbccsmith/v-alpine:latest -f Dockerfile .
+      - name: Push
+        run: docker push aabbccsmith/v-alpine:latest
