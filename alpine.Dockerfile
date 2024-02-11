@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:latest
 
 WORKDIR /opt/vlang
 
@@ -15,10 +15,7 @@ ARG USE_LOCAL
 RUN apk --no-cache add \
   git make gcc bash \
   musl-dev libc-dev \
-  openssl-dev sqlite-dev \
-  libx11-dev glfw-dev freetype-dev \
-  libexecinfo-dev libexecinfo-static \
-  libc6-compat gcompat binutils
+  openssl-dev
 
 COPY . /vlang-local
 
